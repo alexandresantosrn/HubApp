@@ -1,5 +1,6 @@
 package com.example.hubapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -16,5 +17,9 @@ class MainActivity : AppCompatActivity() {
         val cardCalculator = findViewById<MaterialCardView>(R.id.cardCalculator)
         val cardBasketball = findViewById<MaterialCardView>(R.id.cardBasketball)
         val cardConverter = findViewById<MaterialCardView>(R.id.cardConverter)
+
+        cardConverter.setOnClickListener {
+            startActivity(Intent(this, ConverterActivity::class.java))
+        }
     }
 }
