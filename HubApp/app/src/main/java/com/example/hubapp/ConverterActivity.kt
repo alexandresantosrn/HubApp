@@ -1,5 +1,6 @@
 package com.example.hubapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -19,6 +20,15 @@ class ConverterActivity : AppCompatActivity() {
         val spinnerType = findViewById<Spinner>(R.id.spinnerType)
         val btnConvert = findViewById<Button>(R.id.btnConvert)
         val tvResult = findViewById<TextView>(R.id.tvResult)
+        val btnHome = findViewById<Button>(R.id.btnHome)
+
+        btnHome.setOnClickListener {
+            // volta para a MainActivity limpando a pilha
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
+            finish() // encerra a tela atual
+        }
 
         // Tipos de conversão
         val types =

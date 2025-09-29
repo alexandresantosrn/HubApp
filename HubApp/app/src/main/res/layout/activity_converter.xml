@@ -41,4 +41,11 @@
         android:textSize="18sp"
         android:layout_marginTop="24dp" />
 
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🏠 Home"
+        android:layout_marginTop="120dp"
+        android:layout_gravity="center" />
 </LinearLayout>

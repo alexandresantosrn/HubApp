@@ -1,5 +1,6 @@
 package com.example.hubapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -31,6 +32,16 @@ class BasketballActivity : ComponentActivity(){
         val btSubtrairTimeB : Button = findViewById(R.id.negativoB)
 
         val bReiniciar: Button = findViewById(R.id.reiniciarPartida)
+
+        val btnHome = findViewById<Button>(R.id.btnHome)
+
+        btnHome.setOnClickListener {
+            // volta para a MainActivity limpando a pilha
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
+            finish() // encerra a tela atual
+        }
 
         bTresPontosTimeA.setOnClickListener { adicionarPontos(3, "A") }
         bDoisPontosTimeA.setOnClickListener { adicionarPontos(2, "A") }

@@ -7,16 +7,16 @@
     android:background="?android:colorBackground"
     android:padding="48dp">
 
-    <!-- Título -->
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Meu Hub de Aplicativos"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="?android:textColor"
-        android:layout_marginBottom="32dp" />
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.Material3.ActionBar"
+        app:title="Meu Hub de Aplicativos"
+        app:titleTextColor="?attr/colorOnPrimary"
+        app:titleCentered="true"
+        android:layout_marginBottom="32dp"/>
 
     <!-- Card Calculadora -->
     <com.google.android.material.card.MaterialCardView

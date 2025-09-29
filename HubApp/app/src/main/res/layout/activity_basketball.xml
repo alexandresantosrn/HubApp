@@ -151,14 +151,22 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🏠 Home"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
         android:id="@+id/reiniciarPartida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Reiniciar Partida"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_above="@id/btnHome"
+        android:layout_marginBottom="16dp"
         android:textColor="@color/colorPrimary"
         android:background="@android:color/holo_red_light"
-        android:textSize="18sp"
-        android:layout_margin="32dp"/>
+        android:textSize="18sp" />
 </RelativeLayout>

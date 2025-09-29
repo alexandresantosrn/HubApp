@@ -1,5 +1,6 @@
 package com.example.hubapp
 
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -48,6 +49,16 @@ class CalculatorActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
+        val btnHome = findViewById<Button>(R.id.btnHome)
+
+        btnHome.setOnClickListener {
+            // volta para a MainActivity limpando a pilha
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
+            startActivity(intent)
+            finish() // encerra a tela atual
         }
 
         // TextView de display
