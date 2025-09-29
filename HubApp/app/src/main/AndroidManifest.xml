@@ -23,6 +23,12 @@
         <activity
             android:name=".ConverterActivity"
             android:exported="true" />
+        <activity
+            android:name=".CalculatorActivity"
+            android:exported="true" />
+        <activity
+            android:name=".BasketballActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

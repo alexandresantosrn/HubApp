@@ -18,6 +18,14 @@ class MainActivity : AppCompatActivity() {
         val cardBasketball = findViewById<MaterialCardView>(R.id.cardBasketball)
         val cardConverter = findViewById<MaterialCardView>(R.id.cardConverter)
 
+        cardCalculator.setOnClickListener {
+            startActivity(Intent(this, CalculatorActivity::class.java))
+        }
+
+        cardBasketball.setOnClickListener {
+            startActivity(Intent(this, BasketballActivity::class.java))
+        }
+
         cardConverter.setOnClickListener {
             startActivity(Intent(this, ConverterActivity::class.java))
         }

@@ -41,7 +41,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@android:drawable/ic_menu_manage"
-                android:tint="?attr/colorOnSurface" />
+                app:tint="?attr/colorSurface" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@android:drawable/ic_menu_gallery"
-                android:tint="?attr/colorOnSurface" />
+                app:tint="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -110,7 +110,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@android:drawable/ic_menu_compass"
-                android:tint="?attr/colorOnSurface" />
+                app:tint="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="match_parent"

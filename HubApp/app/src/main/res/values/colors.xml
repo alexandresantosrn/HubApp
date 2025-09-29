@@ -17,4 +17,18 @@
     <color name="colorOnBackgroundDark">#FFFFFF</color>
     <color name="colorSurfaceDark">#1E1E1E</color>
     <color name="colorOnSurfaceDark">#FFFFFF</color>
+
+    <color name="colorClear">#EF5350</color> <!-- Vermelho para Clear -->
+    <color name="colorOnClear">#000000</color> <!-- Texto preto -->
+
+    <color name="colorBackspace">#FFA726</color> <!-- Laranja para Backspace -->
+    <color name="colorOnBackspace">#000000</color> <!-- Texto preto -->
+
+    <color name="colorBackground2">#FAFAFA</color> <!-- Fundo claro -->
+    <color name="colorBackgroundDark2">#121212</color> <!-- Fundo escuro -->
+
+    <color name="colorDisplay">#E0E0E0</color> <!-- Fundo do display -->
+    <color name="colorOnDisplay">#212121</color> <!-- Texto do display -->
+
+
 </resources>
