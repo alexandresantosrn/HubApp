@@ -118,7 +118,7 @@
             android:textStyle="bold"
             android:text="9"
             android:backgroundTint="?attr/colorSecondary"
-            android:textColor="@color/colorOnSecondary"/>
+            android:textColor="@color/colorPrimary"/>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSubtrair"
             style="@style/Widget.Material3.Button"

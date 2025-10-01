@@ -2,54 +2,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
     android:background="?android:colorBackground"
-    android:padding="48dp">
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_large">
 
+    <!-- Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="@dimen/margin_large"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.Material3.ActionBar"
-        app:title="Meu Hub de Aplicativos"
-        app:titleTextColor="?attr/colorOnPrimary"
+        app:title="@string/app_name"
         app:titleCentered="true"
-        android:layout_marginBottom="32dp"/>
+        app:titleTextColor="?attr/colorOnPrimary" />
 
     <!-- Card Calculadora -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardCalculator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="6dp"
-        app:cardBackgroundColor="?attr/colorSurface">
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardCornerRadius="@dimen/button_corner_radius"
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
+            android:padding="@dimen/margin_medium">
 
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="@dimen/button_icon_size"
+                android:layout_height="@dimen/button_icon_size"
                 android:src="@drawable/ic_calculate"
                 app:tint="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Calculadora"
-                android:textSize="18sp"
+                android:paddingStart="@dimen/margin_medium"
+                android:text="@string/title_calculator"
                 android:textColor="?attr/colorOnSurface"
-                android:paddingStart="16dp" />
+                android:textSize="@dimen/text_body_size" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -58,33 +59,33 @@
         android:id="@+id/cardBasketball"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="6dp"
-        app:cardBackgroundColor="?attr/colorSurface">
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardCornerRadius="@dimen/button_corner_radius"
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
+            android:padding="@dimen/margin_medium">
 
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="@dimen/button_icon_size"
+                android:layout_height="@dimen/button_icon_size"
                 android:src="@drawable/ic_basketball"
                 app:tint="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Placar de Basquete"
-                android:textSize="18sp"
+                android:paddingStart="@dimen/margin_medium"
+                android:text="@string/title_scoreboard"
                 android:textColor="?attr/colorOnSurface"
-                android:paddingStart="16dp" />
+                android:textSize="@dimen/text_body_size" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -95,30 +96,30 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackground"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="6dp"
-        app:cardBackgroundColor="?attr/colorSurface">
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardCornerRadius="@dimen/button_corner_radius"
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
+            android:padding="@dimen/margin_medium">
 
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="@dimen/button_icon_size"
+                android:layout_height="@dimen/button_icon_size"
                 android:src="@drawable/ic_converter"
                 app:tint="?attr/colorOnSurface" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Conversor de Unidades"
-                android:textSize="18sp"
+                android:paddingStart="@dimen/margin_medium"
+                android:text="@string/title_converter"
                 android:textColor="?attr/colorOnSurface"
-                android:paddingStart="16dp" />
+                android:textSize="@dimen/text_body_size" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

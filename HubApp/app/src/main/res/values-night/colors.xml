@@ -1,0 +1,12 @@
+<resources>
+    <!-- Cores principais no tema escuro -->
+    <color name="colorPrimary">#BB86FC</color> <!-- Roxo claro -->
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="colorSecondary">#03DAC6</color>
+
+    <!-- Texto e fundos (tema escuro) -->
+    <color name="colorOnPrimary">#000000</color>
+    <color name="colorBackground">#121212</color>
+    <color name="colorSurface">#1E1E1E</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+</resources>
