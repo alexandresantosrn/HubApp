@@ -11,5 +11,23 @@
     <string name="tiro_livre">Tiro Livre</string>
     <string name="menos_um">-1 Ponto</string>
     <string name="reiniciar_partida">Reiniciar Partida</string>
+
     <string name="home">🏠 Home</string>
+    <string name="day_night">☀️</string>
+
+    <!-- Botões calculadora -->
+    <string name="clear">Limpar</string>
+    <string name="backspace">Apagar</string>
+    <string name="percent">Porcentagem</string>
+    <string name="divide">Dividir</string>
+    <string name="sqrt">Raiz Quadrada</string>
+    <string name="square">Ao Quadrado</string>
+    <string name="power">Potência</string>
+    <string name="multiply">Multiplicar</string>
+    <string name="subtract">Subtrair</string>
+    <string name="add">Somar</string>
+    <string name="equal">Igual</string>
+    <string name="decimal">Ponto Decimal</string>
+    <string name="factorial">Fatorial</string>
+    <string name="logarithm">Logaritmo</string>
 </resources>

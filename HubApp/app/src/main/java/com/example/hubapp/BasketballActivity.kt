@@ -86,6 +86,7 @@ class BasketballActivity : ComponentActivity(){
         atualizaCoresPlacar()
     }
 
+    // Função para reiniciar a partida
     fun reiniciarPartida() {
         pontuacaoTimeA = 0
         pTimeA.setText(pontuacaoTimeA.toString())
