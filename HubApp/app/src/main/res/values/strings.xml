@@ -3,4 +3,13 @@
     <string name="title_calculator">Calculadora</string>
     <string name="title_scoreboard">Placar de Basquete</string>
     <string name="title_converter">Conversor de Unidades</string>
+
+    <string name="time_a">Time A</string>
+    <string name="time_b">Time B</string>
+    <string name="mais_tres">+3 Pontos</string>
+    <string name="mais_dois">+2 Pontos</string>
+    <string name="tiro_livre">Tiro Livre</string>
+    <string name="menos_um">-1 Ponto</string>
+    <string name="reiniciar_partida">Reiniciar Partida</string>
+    <string name="home">🏠 Home</string>
 </resources>

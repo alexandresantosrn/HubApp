@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray">
+    android:background="?android:colorBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <!-- Coluna Time A -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -21,10 +23,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="16dp"
-                android:text="Time A"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/time_a"
                 android:textStyle="bold"
-                android:textColor="@color/colorSecondary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="40sp"
                 android:fontFamily="sans-serif"/>
 
@@ -33,55 +35,61 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="4dp"
+                android:padding="@dimen/margin_small"
                 android:text="0"
                 android:textSize="54sp"
-                android:textColor="@color/colorSecondary"
+                android:textColor="?attr/colorPrimary"
                 android:fontFamily="sans-serif"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/tresPontosA"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:textSize="18sp"
+                android:layout_margin="@dimen/margin_small"
+                android:textSize="@dimen/text_body_size"
+                android:text="@string/mais_tres"
+                app:cornerRadius="@dimen/button_corner_radius"/>
 
-                android:text="+3 PONTOS" />
-
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/doisPontosA"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_small"
+                android:textSize="@dimen/text_body_size"
+                android:text="@string/mais_dois"
+                app:cornerRadius="@dimen/button_corner_radius"/>
 
-                android:textSize="18sp"
-                android:text="+2 PONTOS" />
-
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/tiroLivreA"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_small"
+                android:textSize="@dimen/text_body_size"
+                android:text="@string/tiro_livre"
+                app:cornerRadius="@dimen/button_corner_radius"/>
 
-                android:textSize="18sp"
-                android:text="Tiro Livre" />
-
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/negativoA"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-
-                android:textSize="18sp"
-                android:text="- 1 Ponto" />
+                android:layout_margin="@dimen/margin_small"
+                android:textSize="@dimen/text_body_size"
+                android:text="@string/menos_um"
+                app:cornerRadius="@dimen/button_corner_radius"/>
         </LinearLayout>
 
+        <!-- Linha divisória -->
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"
-            android:layout_marginTop="16dp"/>
+            android:background="?attr/colorOnSurface"
+            android:layout_marginTop="@dimen/margin_medium"/>
 
+        <!-- Coluna Time B -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -93,10 +101,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="16dp"
-                android:text="Time B"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/time_b"
                 android:textStyle="bold"
-                android:textColor="@color/colorSecondary"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="40sp"
                 android:fontFamily="sans-serif"/>
 
@@ -105,68 +113,78 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:padding="4dp"
+                android:padding="@dimen/margin_small"
                 android:text="0"
                 android:textSize="54sp"
-                android:textColor="@color/colorSecondary"
+                android:textColor="?attr/colorPrimary"
                 android:fontFamily="sans-serif"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/tresPontosB"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_small"
+                android:textSize="@dimen/text_body_size"
+                android:text="@string/mais_tres"
+                app:cornerRadius="@dimen/button_corner_radius"/>
 
-                android:textSize="18sp"
-                android:text="+3 PONTOS" />
-
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/doisPontosB"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_small"
+                android:textSize="@dimen/text_body_size"
+                android:text="@string/mais_dois"
+                app:cornerRadius="@dimen/button_corner_radius"/>
 
-                android:textSize="18sp"
-                android:text="+2 PONTOS" />
-
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/tiroLivreB"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/margin_small"
+                android:textSize="@dimen/text_body_size"
+                android:text="@string/tiro_livre"
+                app:cornerRadius="@dimen/button_corner_radius"/>
 
-                android:textSize="18sp"
-                android:text="Tiro Livre" />
-
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/negativoB"
+                style="?attr/materialButtonOutlinedStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-
-                android:textSize="18sp"
-                android:text="- 1 Ponto" />
+                android:layout_margin="@dimen/margin_small"
+                android:textSize="@dimen/text_body_size"
+                android:text="@string/menos_um"
+                app:cornerRadius="@dimen/button_corner_radius"/>
         </LinearLayout>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="🏠 Home"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp"
-        android:layout_centerHorizontal="true"/>
-
-    <Button
+    <!-- Botão Reiniciar -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/reiniciarPartida"
+        style="?attr/materialButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reiniciar Partida"
+        android:text="@string/reiniciar_partida"
         android:layout_above="@id/btnHome"
-        android:layout_marginBottom="16dp"
-        android:textColor="@color/colorPrimary"
-        android:background="@android:color/holo_red_light"
-        android:textSize="18sp" />
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="@dimen/text_body_size"
+        app:cornerRadius="@dimen/button_corner_radius"
+        app:backgroundTint="?attr/colorError"/>
+
+    <!-- Botão Home -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnHome"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_centerHorizontal="true"
+        app:cornerRadius="@dimen/button_corner_radius"/>
 </RelativeLayout>

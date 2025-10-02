@@ -14,10 +14,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Criando os cards para as telas.
         val cardCalculator = findViewById<MaterialCardView>(R.id.cardCalculator)
         val cardBasketball = findViewById<MaterialCardView>(R.id.cardBasketball)
         val cardConverter = findViewById<MaterialCardView>(R.id.cardConverter)
 
+        // Chamando as telas.
         cardCalculator.setOnClickListener {
             startActivity(Intent(this, CalculatorActivity::class.java))
         }

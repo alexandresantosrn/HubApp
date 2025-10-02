@@ -10,7 +10,6 @@ import androidx.activity.ComponentActivity
 class BasketballActivity : ComponentActivity(){
     private var pontuacaoTimeA: Int = 0
     private var pontuacaoTimeB: Int = 0
-
     private lateinit var pTimeA: TextView
     private lateinit var pTimeB: TextView
 
@@ -18,9 +17,11 @@ class BasketballActivity : ComponentActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basketball)
 
+        // Configuração dos elementos da interface
         pTimeA = findViewById(R.id.placarTimeA)
         pTimeB = findViewById(R.id.placarTimeB)
 
+        // Configuração dos botões
         val bTresPontosTimeA: Button = findViewById(R.id.tresPontosA)
         val bDoisPontosTimeA: Button = findViewById(R.id.doisPontosA)
         val bTLivreTimeA: Button = findViewById(R.id.tiroLivreA)
@@ -35,6 +36,7 @@ class BasketballActivity : ComponentActivity(){
 
         val btnHome = findViewById<Button>(R.id.btnHome)
 
+        // Configuração do botão Home
         btnHome.setOnClickListener {
             // volta para a MainActivity limpando a pilha
             val intent = Intent(this, MainActivity::class.java)
@@ -43,6 +45,7 @@ class BasketballActivity : ComponentActivity(){
             finish() // encerra a tela atual
         }
 
+        // Configuração dos listeners dos botões
         bTresPontosTimeA.setOnClickListener { adicionarPontos(3, "A") }
         bDoisPontosTimeA.setOnClickListener { adicionarPontos(2, "A") }
         bTLivreTimeA.setOnClickListener { adicionarPontos(1, "A") }
@@ -56,6 +59,7 @@ class BasketballActivity : ComponentActivity(){
         bReiniciar.setOnClickListener { reiniciarPartida() }
     }
 
+    // Função para adicionar pontos ao placar
     fun adicionarPontos(pontos: Int, time: String) {
         if(time == "A"){
             if (pontos + pontuacaoTimeA >= 0) {
@@ -71,6 +75,7 @@ class BasketballActivity : ComponentActivity(){
         atualizaPlacar(time)
     }
 
+    // Função para atualizar o placar na interface
     fun atualizaPlacar(time: String){
         if(time == "A"){
             pTimeA.setText(pontuacaoTimeA.toString())
@@ -92,25 +97,26 @@ class BasketballActivity : ComponentActivity(){
         atualizaCoresPlacar()
     }
 
+    // Função para atualizar as cores do placar de acordo com o time vencedor
     fun atualizaCoresPlacar() {
         when {
             pontuacaoTimeA > pontuacaoTimeB -> {
-                pTimeA.setBackgroundColor(getColor(R.color.colorSecondary))
-                pTimeA.setTextColor(getColor(R.color.colorPrimary))
-                pTimeB.setBackgroundColor(getColor(android.R.color.darker_gray))
-                pTimeB.setTextColor(getColor(R.color.colorSecondary))
+                pTimeA.setBackgroundColor(getColor(R.color.colorOnSurface))
+                pTimeA.setTextColor(getColor(R.color.colorOnPrimary))
+                pTimeB.setBackgroundColor(getColor(R.color.colorBackground))
+                pTimeB.setTextColor(getColor(R.color.colorPrimary))
             }
             pontuacaoTimeB > pontuacaoTimeA -> {
-                pTimeB.setBackgroundColor(getColor(R.color.colorSecondary))
-                pTimeB.setTextColor(getColor(R.color.colorPrimary))
-                pTimeA.setBackgroundColor(getColor(android.R.color.darker_gray))
-                pTimeA.setTextColor(getColor(R.color.colorSecondary))
+                pTimeB.setBackgroundColor(getColor(R.color.colorOnSurface))
+                pTimeB.setTextColor(getColor(R.color.colorOnPrimary))
+                pTimeA.setBackgroundColor(getColor(R.color.colorBackground))
+                pTimeA.setTextColor(getColor(R.color.colorPrimary))
             }
             else -> {
-                pTimeA.setBackgroundColor(getColor(android.R.color.darker_gray))
-                pTimeB.setBackgroundColor(getColor(android.R.color.darker_gray))
-                pTimeA.setTextColor(getColor(R.color.colorSecondary))
-                pTimeB.setTextColor(getColor(R.color.colorSecondary))
+                pTimeA.setBackgroundColor(getColor(R.color.colorBackground))
+                pTimeB.setBackgroundColor(getColor(R.color.colorBackground))
+                pTimeA.setTextColor(getColor(R.color.colorPrimary))
+                pTimeB.setTextColor(getColor(R.color.colorPrimary))
             }
         }
     }
