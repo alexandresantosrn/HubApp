@@ -30,4 +30,5 @@
     <string name="decimal">Ponto Decimal</string>
     <string name="factorial">Fatorial</string>
     <string name="logarithm">Logaritmo</string>
+    <string name="history">Ver Histórico</string>
 </resources>

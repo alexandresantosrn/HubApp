@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/margin_medium"
+    android:padding="@dimen/tablet_margin_large"
     android:background="?android:colorBackground">
 
     <!-- Botão alternar tema -->
@@ -15,8 +15,8 @@
         android:layout_height="wrap_content"
         android:text="@string/day_night"
         android:contentDescription="@string/day_night"
-        android:layout_margin="@dimen/margin_small"
-        app:cornerRadius="@dimen/button_corner_radius"
+        android:layout_margin="@dimen/tablet_margin_small"
+        app:cornerRadius="@dimen/tablet_button_corner_radius"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -28,40 +28,45 @@
         android:layout_height="wrap_content"
         android:gravity="end"
         android:text="0"
-        android:textSize="32sp"
+        android:textSize="@dimen/tablet_text_display"
         android:background="@color/colorDisplay"
         android:textColor="@color/colorOnDisplay"
-        android:padding="@dimen/margin_medium"
-        android:layout_marginTop="@dimen/margin_large"
+        android:padding="@dimen/tablet_margin_medium"
+        android:layout_marginTop="@dimen/tablet_margin_large"
         app:layout_constraintTop_toBottomOf="@id/btnToggleTheme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Grade de botões -->
+    <!-- Grid de botões -->
     <GridLayout
         android:id="@+id/gridButtons"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/tablet_margin_large"
         android:rowCount="6"
         android:columnCount="4"
         android:alignmentMode="alignMargins"
         android:useDefaultMargins="true"
-        app:layout_constraintTop_toBottomOf="@id/txtResultado"
-        app:layout_constraintBottom_toTopOf="@id/btnHistory"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtResultado"
+        app:layout_constraintBottom_toTopOf="@id/btnHistory">
 
         <!-- Linha 1 -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnClear"
             style="@style/Widget.Material3.Button"
-            android:text="C"
+            android:text="@string/clear"
             android:textStyle="bold"
-            android:contentDescription="@string/clear"
             android:backgroundTint="@color/colorClear"
             android:textColor="@color/colorOnClear"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBackspace"
             style="@style/Widget.Material3.Button"
@@ -70,21 +75,38 @@
             android:contentDescription="@string/backspace"
             android:backgroundTint="@color/colorBackspace"
             android:textColor="@color/colorOnBackspace"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPercent"
             style="@style/Widget.Material3.Button"
             android:text="%"
             android:textStyle="bold"
             android:contentDescription="@string/percent"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDividir"
             style="@style/Widget.Material3.Button"
             android:text="÷"
             android:textStyle="bold"
             android:contentDescription="@string/divide"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
 
         <!-- Linha 2 -->
         <com.google.android.material.button.MaterialButton
@@ -93,28 +115,51 @@
             android:text="√x"
             android:textStyle="bold"
             android:contentDescription="@string/sqrt"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSquare"
             style="@style/Widget.Material3.Button"
             android:text="x²"
             android:textStyle="bold"
             android:contentDescription="@string/square"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPower"
             style="@style/Widget.Material3.Button"
             android:text="xʸ"
             android:textStyle="bold"
             android:contentDescription="@string/power"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMultiplicar"
             style="@style/Widget.Material3.Button"
             android:text="×"
             android:textStyle="bold"
             android:contentDescription="@string/multiply"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
 
         <!-- Linha 3 -->
         <com.google.android.material.button.MaterialButton
@@ -123,28 +168,51 @@
             android:text="7"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn8"
             style="@style/Widget.Material3.Button"
             android:text="8"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn9"
             style="@style/Widget.Material3.Button"
             android:text="9"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSubtrair"
             style="@style/Widget.Material3.Button"
             android:text="-"
             android:textStyle="bold"
             android:contentDescription="@string/subtract"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
 
         <!-- Linha 4 -->
         <com.google.android.material.button.MaterialButton
@@ -153,28 +221,51 @@
             android:text="4"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn5"
             style="@style/Widget.Material3.Button"
             android:text="5"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn6"
             style="@style/Widget.Material3.Button"
             android:text="6"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSomar"
             style="@style/Widget.Material3.Button"
             android:text="+"
             android:textStyle="bold"
             android:contentDescription="@string/add"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
 
         <!-- Linha 5 -->
         <com.google.android.material.button.MaterialButton
@@ -183,28 +274,51 @@
             android:text="1"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn2"
             style="@style/Widget.Material3.Button"
             android:text="2"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn3"
             style="@style/Widget.Material3.Button"
             android:text="3"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnIgual"
             style="@style/Widget.Material3.Button"
             android:text="="
             android:textStyle="bold"
             android:contentDescription="@string/equal"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
 
         <!-- Linha 6 -->
         <com.google.android.material.button.MaterialButton
@@ -213,30 +327,52 @@
             android:text="0"
             android:textStyle="bold"
             android:backgroundTint="?attr/colorSecondary"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnPonto"
             style="@style/Widget.Material3.Button"
             android:text="."
             android:textStyle="bold"
-            android:backgroundTint="?attr/colorSecondary"
             android:contentDescription="@string/decimal"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:backgroundTint="?attr/colorSecondary"
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnFatorial"
             style="@style/Widget.Material3.Button"
             android:text="n!"
             android:textStyle="bold"
             android:contentDescription="@string/factorial"
-            app:cornerRadius="@dimen/button_corner_radius"/>
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLog"
             style="@style/Widget.Material3.Button"
             android:text="log"
             android:textStyle="bold"
             android:contentDescription="@string/logarithm"
-            app:cornerRadius="@dimen/button_corner_radius"/>
-
+            android:textSize="@dimen/tablet_text_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cornerRadius="@dimen/tablet_button_corner_radius"/>
     </GridLayout>
 
     <!-- Histórico -->
@@ -246,11 +382,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/history"
-        app:cornerRadius="@dimen/button_corner_radius"
+        android:textSize="@dimen/tablet_text_button"
+        app:cornerRadius="@dimen/tablet_button_corner_radius"
         app:layout_constraintBottom_toTopOf="@id/btnHome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="@dimen/margin_medium"/>
+        android:layout_marginBottom="@dimen/tablet_margin_medium"/>
 
     <!-- Home -->
     <com.google.android.material.button.MaterialButton
@@ -259,10 +396,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/home"
-        app:cornerRadius="@dimen/button_corner_radius"
+        android:textSize="@dimen/tablet_text_button"
+        app:cornerRadius="@dimen/tablet_button_corner_radius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="@dimen/margin_large"/>
-
+        android:layout_marginBottom="@dimen/tablet_margin_large"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
