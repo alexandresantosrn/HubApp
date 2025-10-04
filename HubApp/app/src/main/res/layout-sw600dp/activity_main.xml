@@ -1,0 +1,140 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_large">
+
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.Material3.ActionBar"
+        app:title="@string/app_name"
+        app:titleCentered="true"
+        app:titleTextColor="?attr/colorOnPrimary" />
+
+    <!-- Container horizontal para cards -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="3">
+
+        <!-- Card Calculadora -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCalculator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_medium"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="@dimen/button_corner_radius"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_medium">
+
+                <ImageView
+                    android:layout_width="@dimen/button_icon_size"
+                    android:layout_height="@dimen/button_icon_size"
+                    android:src="@drawable/ic_calculate"
+                    app:tint="?attr/colorOnSurface" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:text="@string/title_calculator"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="@dimen/text_body_size" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card Placar -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBasketball"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_medium"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="@dimen/button_corner_radius"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_medium">
+
+                <ImageView
+                    android:layout_width="@dimen/button_icon_size"
+                    android:layout_height="@dimen/button_icon_size"
+                    android:src="@drawable/ic_basketball"
+                    app:tint="?attr/colorOnSurface" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:text="@string/title_scoreboard"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="@dimen/text_body_size" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card Conversor -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardConverter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/margin_medium"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="@dimen/button_corner_radius"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_medium">
+
+                <ImageView
+                    android:layout_width="@dimen/button_icon_size"
+                    android:layout_height="@dimen/button_icon_size"
+                    android:src="@drawable/ic_converter"
+                    app:tint="?attr/colorOnSurface" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:text="@string/title_converter"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="@dimen/text_body_size" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</LinearLayout>
