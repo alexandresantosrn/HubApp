@@ -1,6 +1,6 @@
 <resources>
-    <!-- Tamanhos de texto -->
-    <dimen name="margin_large">32dp</dimen>
+    <!-- Tamanhos de texto gerais -->
+    <dimen name="margin_large">24dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_small">8dp</dimen>
 
@@ -10,10 +10,11 @@
     <dimen name="text_title_size">20sp</dimen>
     <dimen name="text_body_size">18sp</dimen>
 
-    <dimen name="tablet_margin_small">16dp</dimen>
-    <dimen name="tablet_margin_medium">24dp</dimen>
-    <dimen name="tablet_margin_large">32dp</dimen>
-    <dimen name="tablet_button_corner_radius">32dp</dimen>
-    <dimen name="tablet_text_button">22sp</dimen>
-    <dimen name="tablet_text_display">40sp</dimen>
+    <!-- Ajustes para tablet 600dp -->
+    <dimen name="tablet_margin_small">12dp</dimen>
+    <dimen name="tablet_margin_medium">16dp</dimen>
+    <dimen name="tablet_margin_large">24dp</dimen>
+    <dimen name="tablet_button_corner_radius">24dp</dimen>
+    <dimen name="tablet_text_button">20sp</dimen>
+    <dimen name="tablet_text_display">36sp</dimen>
 </resources>
