@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/tablet_margin_large"
     android:background="?android:colorBackground"
-    tools:context=".PlacarActivity">
+    tools:context=".BasketballActivity">
 
     <!-- Conteúdo principal rolável -->
     <androidx.core.widget.NestedScrollView
