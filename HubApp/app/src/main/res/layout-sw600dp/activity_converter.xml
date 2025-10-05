@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="32dp">
 
     <!-- Conteúdo centralizado -->
     <LinearLayout
@@ -21,43 +21,46 @@
             android:id="@+id/titleBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="24dp"
             android:gravity="center"
             android:text="@string/title_converter"
-            android:textSize="@dimen/text_title_size"
+            android:textSize="24sp"
             android:textColor="@color/colorOnPrimary"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-medium"
-            android:elevation="4dp" />
+            android:elevation="6dp" />
 
         <EditText
             android:id="@+id/etInputValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Digite o valor"
-            android:layout_marginTop="30dp"
-            android:inputType="numberDecimal" />
+            android:layout_marginTop="40dp"
+            android:inputType="numberDecimal"
+            android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/spinnerType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="16dp"
+            android:padding="8dp" />
 
         <Button
             android:id="@+id/btnConvert"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/converter"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="24dp"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tvResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/resultado"
-            android:textSize="18sp"
-            android:layout_marginTop="24dp" />
+            android:textSize="22sp"
+            android:layout_marginTop="32dp" />
     </LinearLayout>
 
     <!-- Botão Home fixo no fundo -->
@@ -66,8 +69,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/home"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

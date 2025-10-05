@@ -31,4 +31,9 @@
     <string name="factorial">Fatorial</string>
     <string name="logarithm">Logaritmo</string>
     <string name="history">Ver Histórico</string>
+
+    <string name="digite_o_valor">Digite o Valor</string>
+    <string name="converter">Converter</string>
+    <string name="resultado">Resultado</string>
+
 </resources>
