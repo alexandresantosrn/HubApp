@@ -14,6 +14,7 @@ class ConverterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        LogHelper.appStart("Conversor de Unidades")
         setContentView(R.layout.activity_converter)
 
         val inputValue = findViewById<EditText>(R.id.etInputValue)
@@ -61,5 +62,10 @@ class ConverterActivity : AppCompatActivity() {
 
             tvResult.text = "Resultado: $formatted"
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LogHelper.appStop("Conversor de Unidades")
     }
 }

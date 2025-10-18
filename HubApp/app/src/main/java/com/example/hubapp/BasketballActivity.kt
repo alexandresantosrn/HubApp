@@ -15,6 +15,7 @@ class BasketballActivity : ComponentActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        LogHelper.appStart("Placar de Basquete")
         setContentView(R.layout.activity_basketball)
 
         // Configuração dos elementos da interface
@@ -38,11 +39,11 @@ class BasketballActivity : ComponentActivity(){
 
         // Configuração do botão Home
         btnHome.setOnClickListener {
-            // volta para a MainActivity limpando a pilha
+            // volta para a MainActivity
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
             startActivity(intent)
-            finish() // encerra a tela atual
+            finish()
         }
 
         // Configuração dos listeners dos botões
@@ -120,5 +121,10 @@ class BasketballActivity : ComponentActivity(){
                 pTimeB.setTextColor(getColor(R.color.colorPrimary))
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LogHelper.appStop("Placar de Basquete")
     }
 }

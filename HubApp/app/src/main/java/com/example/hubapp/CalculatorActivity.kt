@@ -38,6 +38,7 @@ class CalculatorActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        LogHelper.appStart("Calculadora")
         setContentView(R.layout.activity_calculator)
 
         // Inicializa SharedPreferences
@@ -441,5 +442,10 @@ class CalculatorActivity : AppCompatActivity() {
             else -> "$op(${formatNumber(value)}) = ${formatNumber(result)}"
         }
         addToHistory(historyEntry)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        LogHelper.appStop("Calculadora")
     }
 }

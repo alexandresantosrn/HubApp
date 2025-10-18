@@ -12,6 +12,7 @@ import com.google.android.material.card.MaterialCardView
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        LogHelper.appStart("Hub")
         setContentView(R.layout.activity_main)
 
         // Criando os cards para as telas.
