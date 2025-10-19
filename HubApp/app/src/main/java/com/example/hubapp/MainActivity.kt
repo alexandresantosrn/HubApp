@@ -22,14 +22,17 @@ class MainActivity : AppCompatActivity() {
 
         // Chamando as telas.
         cardCalculator.setOnClickListener {
+            LogHelper.logInfo("MainActivity", "Clicou no card Calculator.")
             startActivity(Intent(this, CalculatorActivity::class.java))
         }
 
         cardBasketball.setOnClickListener {
+            LogHelper.logInfo("MainActivity", "Clicou no card Basketball.")
             startActivity(Intent(this, BasketballActivity::class.java))
         }
 
         cardConverter.setOnClickListener {
+            LogHelper.logInfo("MainActivity", "Clicou no card Converter.")
             startActivity(Intent(this, ConverterActivity::class.java))
         }
     }

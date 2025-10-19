@@ -62,6 +62,8 @@ class BasketballActivity : ComponentActivity(){
 
     // Função para adicionar pontos ao placar
     fun adicionarPontos(pontos: Int, time: String) {
+        LogHelper.logDebug("Placar", "Adicionando $pontos pontos ao time $time")
+
         if(time == "A"){
             if (pontos + pontuacaoTimeA >= 0) {
                 pontuacaoTimeA += pontos
@@ -72,6 +74,9 @@ class BasketballActivity : ComponentActivity(){
                 pontuacaoTimeB += pontos
             }
         }
+
+        LogHelper.logWarning("Placar", "Pontuação atual do time $time: $pontuacaoTimeA")
+        LogHelper.logWarning("Placar", "Pontuação atual do time $time: $pontuacaoTimeB")
 
         atualizaPlacar(time)
     }
@@ -89,6 +94,10 @@ class BasketballActivity : ComponentActivity(){
 
     // Função para reiniciar a partida
     fun reiniciarPartida() {
+        LogHelper.logDebug("Placar", "Reiniciando a partida")
+        LogHelper.logWarning("Placar", "Pontuação atual do time A: $pontuacaoTimeA")
+        LogHelper.logWarning("Placar", "Pontuação atual do time B: $pontuacaoTimeB")
+
         pontuacaoTimeA = 0
         pTimeA.setText(pontuacaoTimeA.toString())
         pontuacaoTimeB = 0

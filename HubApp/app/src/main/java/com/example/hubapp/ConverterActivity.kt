@@ -60,6 +60,8 @@ class ConverterActivity : AppCompatActivity() {
                 result
             )
 
+            LogHelper.logDebug("Conversor", "Valor informado pelo usuário: $value")
+
             tvResult.text = "Resultado: $formatted"
         }
     }
