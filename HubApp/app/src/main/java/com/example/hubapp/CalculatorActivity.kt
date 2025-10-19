@@ -39,6 +39,7 @@ class CalculatorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         LogHelper.appStart("Calculadora")
+        LogHelper.logVerbose("CalculatorActivity", "onCreate iniciado.")
         setContentView(R.layout.activity_calculator)
 
         // Inicializa SharedPreferences
@@ -51,6 +52,8 @@ class CalculatorActivity : AppCompatActivity() {
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
+
+        LogHelper.logInfo("CalculatorActivity", "Tema carregado: ${if (isDarkMode) "Escuro" else "Claro"}")
 
         val btnHome = findViewById<Button>(R.id.btnHome)
 
@@ -82,6 +85,8 @@ class CalculatorActivity : AppCompatActivity() {
         digits.forEach { (digit, id) ->
             findViewById<Button>(id).setOnClickListener { appendDigit(digit) }
         }
+
+        LogHelper.logVerbose("CalculatorActivity", "Botões de dígitos configurados.")
 
         // Botões de operações
         val ops = listOf(
@@ -156,45 +161,60 @@ class CalculatorActivity : AppCompatActivity() {
     private fun appendDigit(d: String) {
         if (d == "." && currentInput.contains(".")) return
         currentInput = if (currentInput == "0") d else currentInput + d
+        LogHelper.logVerbose("CalculatorActivity", "Digitado: $d | Entrada atual: $currentInput")
         updateDisplay()
     }
 
     private fun onOperator(op: String) {
-        if (currentInput.isNotEmpty()) {
-            val value = currentInput.toDoubleOrNull()
-            if (value != null) {
-                if (operand == null) operand = value
-                else operand = performOperation(operand!!, value, pendingOp)
+        try {
+            if (currentInput.isNotEmpty()) {
+                val value = currentInput.toDoubleOrNull()
+                if (value != null) {
+                    if (operand == null) operand = value
+                    else operand = performOperation(operand!!, value, pendingOp)
+                }
+                currentInput = ""
             }
-            currentInput = ""
+            pendingOp = op
+            LogHelper.logInfo("CalculatorActivity", "Operador selecionado: $op")
+
+            updateDisplay()
+        } catch (e: Exception) {
+            LogHelper.logError("CalculatorActivity", "Erro em onOperator: ${e.message}", e)
         }
-        pendingOp = op
-        updateDisplay()
     }
 
     private fun onEquals() {
-        if (operand != null && currentInput.isNotEmpty()) {
-            val value = currentInput.toDoubleOrNull() ?: return
-            val result = performOperation(operand!!, value, pendingOp)
+        try {
+            if (operand != null && currentInput.isNotEmpty()) {
+                val value = currentInput.toDoubleOrNull() ?: return
+                val result = performOperation(operand!!, value, pendingOp)
+                LogHelper.logInfo("CalculatorActivity", "Resultado: $result")
 
-            // Chama a invocação do histórico
-            prepareHistory(operand, value, pendingOp, result)
+                // Chama a invocação do histórico
+                prepareHistory(operand, value, pendingOp, result)
 
-            operand = null
-            pendingOp = null
-            expression = ""
-            currentInput = formatNumber(result)
-            updateDisplay()
+                operand = null
+                pendingOp = null
+                expression = ""
+                currentInput = formatNumber(result)
+                updateDisplay()
+            }
+        } catch (e: Exception) {
+            LogHelper.logError("CalculatorActivity", "Erro ao calcular resultado: ${e.message}", e)
         }
     }
 
     private fun performOperation(a: Double, b: Double, op: String?): Double {
+        LogHelper.logVerbose("CalculatorActivity", "Executando operação: $a $op $b")
+
         return when (op) {
             "+" -> a + b
             "-" -> a - b
             "×" -> a * b
             "÷" -> if (b == 0.0) {
                 Toast.makeText(this, "Divisão por zero", Toast.LENGTH_SHORT).show()
+                LogHelper.logWarning("CalculatorActivity", "Divisão por zero detectada.")
                 a
             } else a / b
             "^" -> Math.pow(a, b)
@@ -208,6 +228,7 @@ class CalculatorActivity : AppCompatActivity() {
         operand = null
         pendingOp = null
         expression = ""
+        LogHelper.logInfo("CalculatorActivity", "Limpando registros.")
         updateDisplay()
     }
 
@@ -352,6 +373,7 @@ class CalculatorActivity : AppCompatActivity() {
             val squared = value * value
 
             addUnaryHistory("x²", value, squared) // <-- histórico
+            LogHelper.logInfo("CalculatorActivity", "Quadrado calculado: $value² = $squared")
 
             currentInput = formatNumber(squared)
             updateDisplay()
@@ -370,11 +392,13 @@ class CalculatorActivity : AppCompatActivity() {
             val value = currentInput.toDoubleOrNull() ?: return
             if (value < 0) {
                 Toast.makeText(this, "Raiz inválida", Toast.LENGTH_SHORT).show()
+                LogHelper.logWarning("CalculatorActivity", "Tentativa de raiz quadrada de número negativo.")
                 return
             }
             val result = kotlin.math.sqrt(value)
 
             addUnaryHistory("√", value, result)
+            LogHelper.logInfo("CalculatorActivity", "Raiz quadrada: √$value = $result")
 
             currentInput = formatNumber(result)
             updateDisplay()
@@ -397,6 +421,7 @@ class CalculatorActivity : AppCompatActivity() {
         val value = currentInput.toDoubleOrNull()
         if (value == null || value < 0 || value % 1 != 0.0) {
             Toast.makeText(this, "Digite um número inteiro não negativo", Toast.LENGTH_SHORT).show()
+            LogHelper.logWarning("CalculatorActivity", "Entrada inválida para fatorial: $currentInput")
             return
         }
 
@@ -407,6 +432,7 @@ class CalculatorActivity : AppCompatActivity() {
         }
 
         addUnaryHistory("!", value, result.toDouble())
+        LogHelper.logInfo("CalculatorActivity", "Fatorial calculado: $n! = $result")
 
         currentInput = result.toString()
         operand = null
@@ -419,12 +445,13 @@ class CalculatorActivity : AppCompatActivity() {
         val value = currentInput.toDoubleOrNull()
         if (value == null || value <= 0) {
             Toast.makeText(this, "Digite um número positivo", Toast.LENGTH_SHORT).show()
+            LogHelper.logWarning("CalculatorActivity", "Entrada inválida para logaritmo: $currentInput")
             return
         }
 
         val result = kotlin.math.log10(value)
-
         addUnaryHistory("log", value, result)
+        LogHelper.logInfo("CalculatorActivity", "Log calculado: log($value) = $result")
 
         currentInput = result.toString()
         operand = null
@@ -446,6 +473,7 @@ class CalculatorActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        LogHelper.logWarning("CalculatorActivity", "onDestroy chamado — encerrando a Activity.")
         LogHelper.appStop("Calculadora")
     }
 }
